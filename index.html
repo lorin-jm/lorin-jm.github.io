@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Julius Merzlikinas — Trust &amp; Safety</title>
+<meta name="description" content="Trust & Safety specialist building AI tools for moderation work. Featured project: Trust Console, an AI-assisted report triage prototype.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F8F7; --card:#FFFFFF; --ink:#16201B; --muted:#55635B; --faint:#86938C;
+  --line:#DAE2DD; --teal:#0A6B6A; --teal-strong:#07524F; --teal-soft:#E0EFED;
+  --amber:#A3650F; --amber-soft:#F5EBD8; --on-teal:#FFFFFF;
+  --font:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --measure:40rem;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101614; --card:#161E1B; --ink:#E7EEEA; --muted:#A2AFA8; --faint:#6E7B74;
+    --line:#26302C; --teal:#4BBFBA; --teal-strong:#6FD3CF; --teal-soft:#16322F;
+    --amber:#E2A64C; --amber-soft:#382C18; --on-teal:#06201E;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101614; --card:#161E1B; --ink:#E7EEEA; --muted:#A2AFA8; --faint:#6E7B74;
+  --line:#26302C; --teal:#4BBFBA; --teal-strong:#6FD3CF; --teal-soft:#16322F;
+  --amber:#E2A64C; --amber-soft:#382C18; --on-teal:#06201E;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--teal-strong);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
+img{max-width:100%;height:auto;display:block}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:52rem;margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:800;font-size:17px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.brand span{color:var(--teal)}
+.nav{display:flex;gap:22px}
+.nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
+.nav a:hover{color:var(--ink)}
+
+.wrap{max-width:52rem;margin:0 auto;padding:0 22px}
+.col{max-width:var(--measure)}
+
+/* hero */
+.hero{text-align:center;padding:64px 0 48px}
+.avatar{width:128px;height:128px;border-radius:50%;margin:0 auto 22px;display:block;object-fit:cover;background:var(--teal-soft);box-shadow:0 0 0 4px var(--paper),0 0 0 6px var(--teal)}
+.hero h1{margin:0;font-size:clamp(34px,6vw,48px);line-height:1.08;font-weight:800;letter-spacing:-.03em}
+.role{margin:10px 0 4px;font-size:19px;color:var(--muted);font-weight:500}
+.place{margin:0;color:var(--faint);font-size:15px}
+.links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:10px 18px;border-radius:999px;text-decoration:none;border:1.5px solid var(--line);color:var(--ink);background:var(--card)}
+.btn:hover{border-color:var(--teal)}
+.btn.solid{background:var(--teal);border-color:var(--teal);color:var(--on-teal)}
+.btn.solid:hover{background:var(--teal-strong);border-color:var(--teal-strong)}
+.intro{max-width:36rem;margin:32px auto 0;color:var(--muted);font-size:18px}
+
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,4vw,32px);line-height:1.2;letter-spacing:-.02em;margin:0 0 10px;font-weight:800}
+h3{font-size:20px;letter-spacing:-.01em;margin:44px 0 10px;font-weight:700}
+p{margin:0 0 16px}
+.lead{font-size:19px;color:var(--muted);margin-bottom:22px}
+.muted{color:var(--muted)}
+ul.plain{margin:0 0 16px;padding-left:20px}
+ul.plain li{margin-bottom:8px}
+ul.plain li::marker{color:var(--teal)}
+
+figure{margin:30px 0}
+.shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--card);box-shadow:0 18px 40px -24px rgba(10,40,36,.35)}
+figcaption{font-size:14px;color:var(--faint);margin-top:10px;max-width:var(--measure)}
+
+/* features */
+.features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 34px;margin-top:8px}
+@media (max-width:680px){.features{grid-template-columns:1fr}}
+.features h4{margin:0 0 6px;font-size:17px;font-weight:700}
+.features p{margin:0;color:var(--muted);font-size:16px}
+
+/* AI vs automation table */
+.table-wrap{overflow-x:auto;margin:14px 0 8px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:560px}
+th,td{text-align:left;padding:13px 16px;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+th{font-size:14px;color:var(--muted);font-weight:700;background:color-mix(in srgb,var(--paper) 60%,var(--card))}
+td:first-child{font-weight:700;width:26%}
+td:nth-child(2){width:30%}
+.tag{display:inline-block;font-size:13px;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--teal-soft);color:var(--teal-strong);white-space:nowrap}
+.tag.plain{background:color-mix(in srgb,var(--line) 60%,transparent);color:var(--muted)}
+
+/* the chart */
+.chart{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 20px 14px;margin:22px 0}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.chart .axis{stroke:var(--line);stroke-width:1}
+.chart .base{stroke:var(--faint);stroke-width:1.5;stroke-dasharray:5 6}
+.chart .lineA{stroke:var(--teal);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.chart text{font-family:var(--font);fill:var(--muted);font-size:13px}
+.chart .val{font-size:22px;font-weight:800;fill:var(--ink)}
+.chart .val.dip{fill:var(--amber)}
+.chart .ver{font-size:14px;font-weight:700;fill:var(--ink)}
+.chart .note{font-size:12.5px;fill:var(--faint)}
+.chart .baseLabel{font-size:12.5px;fill:var(--faint)}
+.results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0 6px}
+@media (max-width:680px){.results{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.results div{border-left:3px solid var(--teal);padding:2px 0 2px 12px}
+.results b{display:block;font-size:24px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.results span{font-size:14px;color:var(--muted);line-height:1.4;display:block}
+
+/* experience */
+.xp{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.xp::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.xp > li{position:relative;padding:0 0 34px 34px}
+.xp > li:last-child{padding-bottom:0}
+.xp > li::before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:3px solid var(--teal)}
+.xp > li.past::before{border-color:var(--faint)}
+.xp-head{display:flex;justify-content:space-between;gap:6px 16px;flex-wrap:wrap;align-items:baseline}
+.xp h3{margin:0;font-size:19px}
+.when{font-size:14.5px;color:var(--faint);font-weight:600;font-variant-numeric:tabular-nums}
+.org{margin:2px 0 10px;color:var(--muted);font-weight:600}
+.xp ul{margin:0;padding-left:20px;color:var(--ink)}
+.xp ul li{margin-bottom:6px}
+.xp ul li::marker{color:var(--faint)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:40px}
+@media (max-width:600px){.facts{grid-template-columns:1fr}}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.facts h4{margin:0 0 4px;font-size:15px;color:var(--muted);font-weight:700}
+.facts p{margin:0}
+
+.contact{text-align:center}
+.contact .col{margin:0 auto}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:14px;color:var(--faint)}
+footer p{margin:0 0 6px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">julius<span>.</span>m</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#project">Project</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <div class="hero">
+    <img class="avatar" src="imgs/profile.jpg" alt="Julius Merzlikinas" width="128" height="128">
+    <h1>Julius Merzlikinas</h1>
+    <p class="role">Trust &amp; Safety specialist building AI tools for moderation work</p>
+    <p class="place">Kaunas, Lithuania</p>
+    <div class="links">
+      <a class="btn solid" href="https://claude.ai/artifact/RgqCnSommkTvbxn4jAfZgj" target="_blank" rel="noopener">Try the live demo</a>
+      <a class="btn" href="https://www.linkedin.com/in/julius-merzlikinas-761157294/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="resume.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+    </div>
+    <p class="intro">I review scams, harassment and suspicious activity on a large second-hand marketplace every day. I'm interested in where AI can take repetitive work off moderators' hands, and where it shouldn't be trusted to decide.</p>
+  </div>
+
+  <section id="project" aria-labelledby="project-title">
+    <h2 id="project-title">Trust Console: AI-assisted report triage</h2>
+    <p class="lead col">A working prototype of a moderation console where Claude recommends one action per report, a person makes the final call, and every decision is logged. I tested the prompt against 30 hand-labelled cases until it held up.</p>
+    <div class="links" style="justify-content:flex-start;margin:0 0 6px">
+      <a class="btn solid" href="https://claude.ai/artifact/RgqCnSommkTvbxn4jAfZgj" target="_blank" rel="noopener">Open the live demo</a>
+    </div>
+
+    <figure>
+      <div class="shot"><img src="imgs/queue.jpg" alt="The report queue: a live count of reports waiting across all agents, shift stats, and a batch of ten case cards, one marked as solved." width="1100" height="773" loading="lazy"></div>
+      <figcaption>The report queue. Agents work through batches of ten; solved cases turn green and show which notice was sent.</figcaption>
+    </figure>
+
+    <div class="col">
+      <h3>The problem</h3>
+      <p>Moderation work in batches is repetitive in ways that wear people down. Every case opens cold, so you read the account, the history and the whole conversation before you can judge anything. Many reports turn out to be false. Choosing the right response from a long list of notices takes time and invites inconsistency between agents. And the most obvious spam accounts are often never reported at all, because they haven't messaged anyone yet.</p>
+      <p>I wanted to see how much of that AI could take on safely, and to be honest about the parts it can't.</p>
+
+      <h3>What it does</h3>
+    </div>
+    <div class="features">
+      <div>
+        <h4>Recommends one notice per case</h4>
+        <p>Claude reads the conversation and account details, then suggests a single notice with a one-line reason and the message it based that on. Enter sends it; any other notice is one keypress away.</p>
+      </div>
+      <div>
+        <h4>Keeps people in control</h4>
+        <p>Notices use fixed, pre-approved wording. Flagged images stay blurred until an agent chooses to look, and every reveal is recorded. The log notes whether the agent followed or overrode the AI.</p>
+      </div>
+      <div>
+        <h4>Catches spam nobody reports</h4>
+        <p>A second queue flags suspicious signups before they act. Only accounts with several strong warning signs are suspended automatically, and a person can confirm or undo each one.</p>
+      </div>
+      <div>
+        <h4>Measures the work fairly</h4>
+        <p>Handling time only counts while a report is open, and lunch or meetings pause every timer, so the numbers reflect real work rather than time at a desk.</p>
+      </div>
+    </div>
+
+    <figure>
+      <div class="shot"><img src="imgs/case.jpg" alt="An open case: account details, IP risk, the reported conversation with an explicit image blurred by default, and the AI recommendation card suggesting a suspension." width="1060" height="720" loading="lazy"></div>
+      <figcaption>An open case. The explicit image stays blurred until an agent reveals it. Here the recommendation card is running on its rules-only fallback, and it says so.</figcaption>
+    </figure>
+
+    <div class="col">
+      <h3>Where AI helps, and where plain automation is enough</h3>
+      <p>Most of the console doesn't need AI at all. Deciding which parts do was the most useful design decision.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Part</th><th scope="col">Approach</th><th scope="col">Why</th></tr></thead>
+        <tbody>
+          <tr><td>Recommending a notice</td><td><span class="tag">Claude</span> with a tested prompt</td><td>Judging tone, intent and context in a conversation is where rules fall short.</td></tr>
+          <tr><td>Flagging images</td><td><span class="tag">Image classifier</span> plus always-on blur</td><td>Protects moderators from harmful content. The label can be wrong, so a person decides.</td></tr>
+          <tr><td>Suspending spam signups</td><td><span class="tag">Detector score</span> and strict rules, with undo</td><td>Needs to be instant and cheap. Running Claude on every signup would be slow and costly.</td></tr>
+          <tr><td>Keybinds, logging, timers, batch controls</td><td><span class="tag plain">Plain automation</span></td><td>These tasks have one right answer. AI would only add cost and risk.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>Testing the prompt</h3>
+      <p>A prompt that works in a demo can fail in daily use, so I wrote 30 test cases with the correct answer for each, including eight false reports designed to tempt the AI into punishing an innocent person. Every prompt change was scored against the full set.</p>
+    </div>
+
+    <div class="chart" role="img" aria-label="Share of defensible answers by prompt version: v1 93 percent, v3 90 percent, v4 100 percent. A rules-only baseline scores 77 percent.">
+      <svg viewBox="0 0 640 250" aria-hidden="true">
+        <line class="axis" x1="40" y1="200" x2="620" y2="200"/>
+        <line class="base" x1="40" y1="160" x2="620" y2="160"/>
+        <text class="baseLabel" x="620" y="152" text-anchor="end">Rules-only baseline, 77%</text>
+        <polyline class="lineA" points="110,70 330,87 550,30"/>
+        <circle cx="110" cy="70" r="7" fill="var(--teal)"/>
+        <circle cx="330" cy="87" r="7" fill="var(--amber)"/>
+        <circle cx="550" cy="30" r="8" fill="var(--teal)"/>
+        <text class="val" x="110" y="53" text-anchor="middle">93%</text>
+        <text class="val dip" x="330" y="120" text-anchor="middle">90%</text>
+        <text class="val" x="550" y="14" text-anchor="middle">100%</text>
+        <text class="ver" x="110" y="224" text-anchor="middle">v1</text>
+        <text class="note" x="110" y="243" text-anchor="middle">First prompt</text>
+        <text class="ver" x="330" y="224" text-anchor="middle">v3</text>
+        <text class="note" x="330" y="243" text-anchor="middle">Fixed two cases, broke three</text>
+        <text class="ver" x="550" y="224" text-anchor="middle">v4</text>
+        <text class="note" x="550" y="243" text-anchor="middle">Narrower, clearer rules</text>
+      </svg>
+    </div>
+
+    <div class="col">
+      <p>The first version was good but too lenient on two cases. I added rules to fix them, and the score went <em>down</em>: one new rule was worded too broadly and suspended an account that only deserved a warning, and another answer warned an innocent reviewer. Without the test set I would have shipped that version believing it was better. The fourth version narrowed the rules and gave a defensible answer on every case.</p>
+    </div>
+    <div class="results">
+      <div><b>30 / 30</b><span>defensible answers</span></div>
+      <div><b>8 / 8</b><span>false reports correctly closed</span></div>
+      <div><b>0</b><span>actions against innocent users</span></div>
+      <div><b>23 / 30</b><span>exact match with the expected notice</span></div>
+    </div>
+
+    <figure>
+      <div class="shot"><img src="imgs/eval.jpg" alt="The evaluation page: Claude with prompt v4 scores 100 percent defensible answers against 77 percent for the rules baseline, followed by a case-by-case results table." width="1030" height="560" loading="lazy"></div>
+      <figcaption>The built-in evaluation page, scoring Claude and a rules-only baseline against the same answer key.</figcaption>
+    </figure>
+
+    <div class="col">
+      <p class="muted">A fair caveat: I wrote both the cases and the answer key, and later prompts were tuned with those cases in view. Real reports are messier, so the next step is a fresh set the prompt has never seen, including messages in Lithuanian, Polish and French.</p>
+
+      <h3>What would need sign-off before real use</h3>
+      <ul class="plain">
+        <li>Sending member conversations to an AI model, and how long that data is kept.</li>
+        <li>Suspending accounts automatically, even with a person reviewing afterwards.</li>
+        <li>The wording of every notice, since members read them.</li>
+        <li>Who owns the prompt and the answer key once the tool is handed over.</li>
+      </ul>
+
+      <h3>What I'd do differently in a real rollout</h3>
+      <p>I'd start smaller. Rather than a new console, the first version would be a Claude project that agents use alongside their existing tools. I'd only integrate it further once the share of recommendations agents actually follow proves it helps. The remaining pattern in the results, a lean towards milder notices for repeat offenders, is a policy question for the team rather than a prompt bug.</p>
+
+      <h3>How I built it</h3>
+      <p>I designed the workflow, wrote the test cases and answer key, and decided every rule and trade-off. I built it iteratively with Claude as my coding partner, the same way I'd expect a non-engineering team to build with an approved AI toolset. All data in the demo is invented.</p>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="xp-title">
+    <h2 id="xp-title">Experience</h2>
+    <ol class="xp">
+      <li>
+        <div class="xp-head"><h3>Junior Content Trust &amp; Safety Specialist</h3><span class="when">June 2025 – present</span></div>
+        <p class="org">Transcom, on the Vinted account, Kaunas</p>
+        <ul>
+          <li>Review user activity, transactions and conversations to spot scams, suspicious behaviour and policy violations.</li>
+          <li>Investigate complex and sensitive cases, weighing evidence, context and potential impact before deciding.</li>
+          <li>Look for patterns across cases to identify recurring abuse and emerging risks.</li>
+          <li>Handle personal data and high-impact decisions with care and confidentiality.</li>
+        </ul>
+      </li>
+      <li class="past">
+        <div class="xp-head"><h3>Customer Success Manager</h3><span class="when">October 2023 – September 2024</span></div>
+        <p class="org">CyberCare, cybersecurity services</p>
+        <ul>
+          <li>Main point of contact for customers, resolving questions and problems from first contact to fix.</li>
+          <li>Worked out the root cause of customer issues and passed them clearly to internal teams.</li>
+          <li>Handled difficult conversations calmly and kept relationships strong.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="facts">
+      <div><h4>Education</h4><p>Vocational education in Office Administration, Lithuania</p></div>
+      <div><h4>Languages</h4><p>Lithuanian (native), English (C1)</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="col">
+      <h2 id="contact-title">Get in touch</h2>
+      <p class="muted">The quickest way to reach me is on LinkedIn.</p>
+      <div class="links"><a class="btn solid" href="https://www.linkedin.com/in/julius-merzlikinas-761157294/" target="_blank" rel="noopener">Message me on LinkedIn</a></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>The Trust Console demo uses invented data and isn't affiliated with Transcom or Vinted.</p>
+    <p>Layout inspired by <a href="https://ramtin2e.github.io/" target="_blank" rel="noopener">Ramtin Karimi's portfolio</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
