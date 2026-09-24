@@ -978,15 +978,15 @@ const AV_GRADS = [
 const BATCHES = [
   [
     { handle:"@lunaclosetsv", cid:"RPT-48213", cat:"Phishing", conf:92, risk:"high", wait:"6m",
-      snippet:"“To skip Vinted fees, pay me directly through this link instead…”",
+      snippet:"“To skip the platform fees, pay me directly through this link instead…”",
       country:"LT", reg:"2 days ago", status:"Active", twofa:"Off", convos:1, feedback:0,
       info:"Email unverified · No prior transactions · 1 listing",
       ipRisk:87, ipNote:"Matches IP used on 4 other suspended accounts this month.",
       items:[{n:"Denim jacket, size M", p:"€18"}],
       thread:[
         {who:"reporter", text:"Hi, is the jacket still available? Can we talk price?"},
-        {who:"reported", text:"Yes! To skip Vinted fees, pay me directly through this link instead:", flag:true},
-        {who:"reported", text:"vinted-secure-payment.com/confirm — you'll get it 10% cheaper.", flag:true},
+        {who:"reported", text:"Yes! To skip the platform fees, pay me directly through this link instead:", flag:true},
+        {who:"reported", text:"secure-payment-confirm.com/confirm — you'll get it 10% cheaper.", flag:true},
         {who:"reporter", text:"That doesn't look like an official link, I'm reporting this."}
       ]},
     { handle:"@retrofinds_ok", cid:"RPT-48214", cat:"Insult", conf:64, risk:"low", wait:"11m",
@@ -1102,7 +1102,7 @@ const BATCHES = [
       ipRisk:81, ipNote:"Same IP as 2 accounts suspended for phishing last week.",
       items:[],
       thread:[
-        {who:"reporter", text:"Great, I'll ship it tomorrow through Vinted as usual."},
+        {who:"reporter", text:"Great, I'll ship it tomorrow through the app as usual."},
         {who:"reported", text:"The courier needs your card details to release the parcel, fill in this form: parcel-verify-lt.com", flag:true},
         {who:"reporter", text:"Why would a seller need to give card details? Reporting."}
       ]},
@@ -1219,7 +1219,7 @@ const BATCHES = [
       items:[{n:"Vintage wool blazer", p:"€34"},{n:"Silk blouse, S", p:"€18"}],
       thread:[
         {who:"reporter", text:"How do I know I'll get my money back if something goes wrong?"},
-        {who:"reported", text:"Here's the help page that explains how buyer protection works: vinted.lt/help", flag:true},
+        {who:"reported", text:"Here's the help page that explains how buyer protection works: help.marketplace.example/buyer-protection", flag:true},
         {who:"reporter", text:"I don't click links from strangers, reporting."}
       ]},
     { handle:"@quick.buy.24", cid:"RPT-48234", cat:"Phishing", conf:89, risk:"high", wait:"2m",
@@ -1328,9 +1328,9 @@ const BATCHES = [
 const DISMISS = "We reviewed this report and didn't find a breach of our policies. No action has been taken on either account.";
 const NOTICE_CATEGORIES = {
   "Phishing":[
-    {code:"PM-PHISHING-WARN", desc:"First offense — formal warning, no restriction yet.", body:"We reviewed a report about this conversation. Sharing payment links outside Vinted breaks our rules and puts buyers at risk. This is a warning on your account."},
-    {code:"PM-PHISHING-SUSPEND", desc:"Account restricted pending further review.", body:"Sharing payment links outside Vinted breaks our rules. Your account has been restricted while we look into it further."},
-    {code:"PM-PHISHING-BAN", desc:"Repeat offender — account permanently closed.", body:"Following repeated reports, your account has been permanently closed for directing users to payment methods outside Vinted.", severe:true},
+    {code:"PM-PHISHING-WARN", desc:"First offense — formal warning, no restriction yet.", body:"We reviewed a report about this conversation. Sharing payment links outside the platform breaks our rules and puts buyers at risk. This is a warning on your account."},
+    {code:"PM-PHISHING-SUSPEND", desc:"Account restricted pending further review.", body:"Sharing payment links outside the platform breaks our rules. Your account has been restricted while we look into it further."},
+    {code:"PM-PHISHING-BAN", desc:"Repeat offender — account permanently closed.", body:"Following repeated reports, your account has been permanently closed for directing users to payment methods outside the platform.", severe:true},
     {code:"PM-PHISHING-ESCALATE", desc:"Routed to Security — data handling involved.", body:"We've flagged this conversation to our Security team. Your account is temporarily restricted while this is reviewed.", severe:true},
     {code:"PM-PHISHING-DISMISS", desc:"Reviewed — link was not a phishing attempt.", body:DISMISS}
   ],
@@ -1342,14 +1342,14 @@ const NOTICE_CATEGORIES = {
     {code:"HARASSMENT-DISMISS", desc:"Reviewed — language did not breach policy.", body:DISMISS}
   ],
   "Insult":[
-    {code:"INSULT-WARN", desc:"First offense — formal warning.", body:"A message you sent was reported for disrespectful language. Please keep conversations on Vinted respectful. This is a warning on your account."},
+    {code:"INSULT-WARN", desc:"First offense — formal warning.", body:"A message you sent was reported for disrespectful language. Please keep conversations on the platform respectful. This is a warning on your account."},
     {code:"INSULT-SUSPEND", desc:"Repeated insults — temporary suspension.", body:"Following repeated reports about disrespectful language, your account has been temporarily suspended."},
     {code:"INSULT-BAN", desc:"Persistent repeat offender — permanently closed.", body:"Following continued reports of abusive language, your account has been permanently closed.", severe:true},
     {code:"INSULT-MEDIATE", desc:"Both sides involved — warning sent to each.", body:"We reviewed this conversation and found it fell below our community standards on both sides. This is a warning to help keep future conversations respectful."},
     {code:"INSULT-DISMISS", desc:"Reviewed — language did not breach policy.", body:DISMISS}
   ],
   "Sexual harassment":[
-    {code:"SEXHAR-WARN", desc:"Inappropriate sexual remark, first offense — formal warning.", body:"A message you sent was reported as sexually inappropriate. This isn't allowed on Vinted. This is a formal warning on your account."},
+    {code:"SEXHAR-WARN", desc:"Inappropriate sexual remark, first offense — formal warning.", body:"A message you sent was reported as sexually inappropriate. This isn't allowed on the platform. This is a formal warning on your account."},
     {code:"SEXHAR-SUSPEND", desc:"Unwanted sexual advances or images — suspended.", body:"We found that you sent unwanted sexual messages or content to another member. Your account has been suspended while we review this further."},
     {code:"SEXHAR-BAN", desc:"Explicit content sent, or repeat offender — permanently closed.", body:"Following a review of sexually explicit or harassing messages sent to other members, your account has been permanently closed.", severe:true},
     {code:"SEXHAR-ESCALATE", desc:"Possible minor involved or criminal content — mandatory escalation.", body:"This case has been escalated to our specialist safety team. Your account is suspended while the investigation is ongoing.", severe:true},
@@ -1363,7 +1363,7 @@ const NOTICE_CATEGORIES = {
     {code:"THREAT-DISMISS", desc:"Reviewed — figure of speech, no genuine threat.", body:DISMISS}
   ],
   "Weapons":[
-    {code:"WEAPON-LISTING-REMOVE", desc:"Prohibited weapon listed for sale — listing removed.", body:"This listing was removed because weapons can't be sold on Vinted. Please review our list of prohibited items."},
+    {code:"WEAPON-LISTING-REMOVE", desc:"Prohibited weapon listed for sale — listing removed.", body:"This listing was removed because weapons can't be sold on the platform. Please review our list of prohibited items."},
     {code:"WEAPON-IMAGE-WARN", desc:"Weapon shown in chat, no threat and nothing offered for sale — removed + warning.", body:"An image you sent was removed because it showed a weapon. This is a warning on your account."},
     {code:"WEAPON-THREAT-SUSPEND", desc:"Weapon image used to intimidate — suspended.", body:"An image you sent showed a weapon in a threatening context. Your account has been suspended while we review this case.", severe:true},
     {code:"WEAPON-ESCALATE", desc:"Weapon plus explicit threat, or offering to sell a prohibited weapon — route to safety lead.", body:"This case has been escalated to our safety team. Your account is suspended while the investigation is ongoing.", severe:true},
@@ -1384,14 +1384,14 @@ const NOTICE_CATEGORIES = {
     {code:"SCAM-DISMISS", desc:"Reviewed — transaction matched what was agreed.", body:DISMISS}
   ],
   "Replica":[
-    {code:"REPLICA-REMOVE", desc:"Listing removed only, account in good standing.", body:"This listing was removed because it's a counterfeit or unauthorised copy of a branded item. Selling replicas isn't allowed on Vinted."},
+    {code:"REPLICA-REMOVE", desc:"Listing removed only, account in good standing.", body:"This listing was removed because it's a counterfeit or unauthorised copy of a branded item. Selling replicas isn't allowed on the platform."},
     {code:"REPLICA-WARN", desc:"Listing removed + formal warning.", body:"This listing was removed for being a counterfeit or unauthorised copy. This is a warning — repeated listings can lead to suspension."},
     {code:"REPLICA-SUSPEND", desc:"Pattern of replica listings — suspended.", body:"We found multiple counterfeit or unauthorised listings on your account. Your account has been suspended while we review this further.", severe:true},
     {code:"REPLICA-ESCALATE", desc:"Routed to Legal / rights holder.", body:"This case has been escalated to our Legal team as it may involve a rights holder's trademark. Your account is suspended in the meantime.", severe:true},
     {code:"REPLICA-DISMISS", desc:"Reviewed — item appears authentic.", body:DISMISS}
   ],
   "Feedback":[
-    {code:"FEEDBACK-EXTORTION-WARN", desc:"User pressured over a rating — formal warning.", body:"We reviewed a report about a message pressuring another member over their feedback. This isn't allowed on Vinted. This is a warning on your account."},
+    {code:"FEEDBACK-EXTORTION-WARN", desc:"User pressured over a rating — formal warning.", body:"We reviewed a report about a message pressuring another member over their feedback. This isn't allowed on the platform. This is a warning on your account."},
     {code:"FEEDBACK-EXTORTION-SUSPEND", desc:"Pattern of feedback pressure — suspended.", body:"We found a pattern of pressuring members over feedback. Your account has been suspended while we review this further.", severe:true},
     {code:"FEEDBACK-FAKE-REMOVE", desc:"Fabricated feedback — rating removed.", body:"We found this feedback didn't relate to a genuine transaction. It has been removed from the account it was left on."},
     {code:"FEEDBACK-RETALIATION-REMOVE", desc:"Retaliatory feedback after a resolved dispute — removed.", body:"This feedback was left in retaliation after a dispute was resolved. It has been removed and won't affect either account's rating."},
@@ -1422,7 +1422,7 @@ Object.entries(NOTICE_SCOPES).forEach(([s, cats]) => cats.forEach(c => CAT_TO_SC
 
 const AUTO_FLAGGED = [
   { handle:"@xk93jd8mqz", country:"NL", signup:"Web · Chrome on Windows", ip:"185.220.101.34", ipNote:"Known Tor exit node", emailVerified:"No", twofa:"Off", phone:"Not added", linked:["@qp71zx0kke","@mm4r8tq2ww"], profileViews:0, email:"xk93jd8mqz@tempmail-plus.com", age:"14 min ago", conf:94, signals:["Random-string username","Disposable email domain","0 items · 0 conversations"] },
-  { handle:"@vinted.support01", country:"LT", signup:"Web · Firefox on Linux", ip:"91.214.124.8", ipNote:"Hosting provider, not residential", emailVerified:"No", twofa:"Off", phone:"Not added", linked:["@vinted.helpdesk","@vinted_team.eu"], profileViews:3, email:"support-team@vintedd-help.com", age:"3 min ago", conf:97, signals:["Impersonates an official account","Lookalike domain","0 items · 0 conversations"] },
+  { handle:"@official.support01", country:"LT", signup:"Web · Firefox on Linux", ip:"91.214.124.8", ipNote:"Hosting provider, not residential", emailVerified:"No", twofa:"Off", phone:"Not added", linked:["@official.helpdesk","@official_team.eu"], profileViews:3, email:"support-team@officiall-help.com", age:"3 min ago", conf:97, signals:["Impersonates an official account","Lookalike domain","0 items · 0 conversations"] },
   { handle:"@user9273810293", country:"PL", signup:"Android app", ip:"37.47.212.90", ipNote:"Mobile carrier IP", emailVerified:"No", twofa:"Off", phone:"Not added", linked:[], profileViews:0, email:"qz7dkf@mailinator.com", age:"41 min ago", conf:81, signals:["Default numeric username","Disposable email domain","0 items · 0 conversations"] },
   { handle:"@freegiftcard_eu", country:"DE", signup:"Web · Chrome on macOS", ip:"45.132.227.61", ipNote:"VPN range, 12 signups in 24h", emailVerified:"Yes", twofa:"Off", phone:"Not added", linked:["@giftcard.drops","@winprize_eu","@free.voucher24"], profileViews:7, email:"promo@winbig-rewards.net", age:"8 min ago", conf:89, signals:["Giveaway keyword pattern","Newly registered domain","0 items · 0 conversations"] },
   { handle:"@mm.thompson", country:"GB", signup:"iOS app", ip:"82.132.214.5", ipNote:"Residential broadband", emailVerified:"Yes", twofa:"On", phone:"Verified", linked:[], profileViews:1, email:"m.thompson84@gmail.com", age:"2 hrs ago", conf:22, signals:["Standard username","Common email provider","0 items · 0 conversations"] }
@@ -1570,7 +1570,7 @@ function itemMeta(c, it){
   const id = 4000000000 + (h % 900000000);
   const slug = it.n.toLowerCase().replace(/[“”"‘’']/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
   const path = `/items/${id}-${slug}`;
-  return { id, hue: h % 360, path, url: `https://www.vinted.lt${path}` };
+  return { id, hue: h % 360, path, url: `https://marketplace.example${path}` };
 }
 function itemArt(hue){
   return `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -2000,8 +2000,8 @@ const TEMPLATES = [
   () => { const u = rstr(10); return { handle:'@'+u, email:`${u}@${pick(DISPOSABLE)}`,
     signals:['Random-string username','Disposable email domain','0 items · 0 conversations'],
     ipNote: pick(['Known Tor exit node','Datacenter IP range','VPN range, many signups in 24h']), emailVerified:'No', twofa:'Off', phone:'Not added' }; },
-  () => { const u = pick(['vinted.support','vinted_help','vintedteam','vinted.safety','vinted-payments']) + rstr(2,'0123456789'); return { handle:'@'+u,
-    email:`${pick(['support','help','security','billing'])}@${pick(['vintedd-help.com','vinted-secure.net','vlnted-support.eu','vinted-verify.org'])}`,
+  () => { const u = pick(['official.support','support_help','helpteam','safety.team','payments-team']) + rstr(2,'0123456789'); return { handle:'@'+u,
+    email:`${pick(['support','help','security','billing'])}@${pick(['officiall-help.com','secure-helpdesk.net','supp0rt-center.eu','verify-account.org'])}`,
     signals:['Impersonates an official account','Lookalike domain','0 items · 0 conversations'],
     ipNote:'Hosting provider, not residential', emailVerified:'No', twofa:'Off', phone:'Not added' }; },
   () => { const u = 'user' + rstr(10,'0123456789'); return { handle:'@'+u, email:`${rstr(6)}@${pick(DISPOSABLE)}`,
@@ -2120,7 +2120,7 @@ setInterval(() => {
 function profileMeta(a){
   const id = 100000000 + (hashStr(a.handle) % 899999999);
   const slug = a.handle.replace('@','').toLowerCase().replace(/[^a-z0-9._-]/g,'');
-  return { id, url: `https://www.vinted.lt/member/${id}-${slug}` };
+  return { id, url: `https://marketplace.example/member/${id}-${slug}` };
 }
 function renderAuto(){
   const list = $('auto-list');
