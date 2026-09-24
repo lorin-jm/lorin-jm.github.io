@@ -1328,10 +1328,10 @@ const BATCHES = [
 const DISMISS = "We reviewed this report and didn't find a breach of our policies. No action has been taken on either account.";
 const NOTICE_CATEGORIES = {
   "Phishing":[
-    {code:"PM-PHISHING-WARN", desc:"First offense — formal warning, no restriction yet.", body:"We reviewed a report about this conversation. Sharing payment links outside the platform breaks our rules and puts buyers at risk. This is a warning on your account."},
-    {code:"PM-PHISHING-SUSPEND", desc:"Account restricted pending further review.", body:"Sharing payment links outside the platform breaks our rules. Your account has been restricted while we look into it further."},
-    {code:"PM-PHISHING-BAN", desc:"Repeat offender — account permanently closed.", body:"Following repeated reports, your account has been permanently closed for directing users to payment methods outside the platform.", severe:true},
-    {code:"PM-PHISHING-ESCALATE", desc:"Routed to Security — data handling involved.", body:"We've flagged this conversation to our Security team. Your account is temporarily restricted while this is reviewed.", severe:true},
+    {code:"PHISHING-WARN", desc:"First offense — formal warning, no restriction yet.", body:"We reviewed a report about this conversation. Sharing payment links outside the platform breaks our rules and puts buyers at risk. This is a warning on your account."},
+    {code:"PHISHING-SUSPEND", desc:"Account restricted pending further review.", body:"Sharing payment links outside the platform breaks our rules. Your account has been restricted while we look into it further."},
+    {code:"PHISHING-BAN", desc:"Repeat offender — account permanently closed.", body:"Following repeated reports, your account has been permanently closed for directing users to payment methods outside the platform.", severe:true},
+    {code:"PHISHING-ESCALATE", desc:"Routed to Security — data handling involved.", body:"We've flagged this conversation to our Security team. Your account is temporarily restricted while this is reviewed.", severe:true},
     {code:"PM-PHISHING-DISMISS", desc:"Reviewed — link was not a phishing attempt.", body:DISMISS}
   ],
   "Harassment":[
@@ -1349,31 +1349,31 @@ const NOTICE_CATEGORIES = {
     {code:"INSULT-DISMISS", desc:"Reviewed — language did not breach policy.", body:DISMISS}
   ],
   "Sexual harassment":[
-    {code:"SEXHAR-WARN", desc:"Inappropriate sexual remark, first offense — formal warning.", body:"A message you sent was reported as sexually inappropriate. This isn't allowed on the platform. This is a formal warning on your account."},
-    {code:"SEXHAR-SUSPEND", desc:"Unwanted sexual advances or images — suspended.", body:"We found that you sent unwanted sexual messages or content to another member. Your account has been suspended while we review this further."},
-    {code:"SEXHAR-BAN", desc:"Explicit content sent, or repeat offender — permanently closed.", body:"Following a review of sexually explicit or harassing messages sent to other members, your account has been permanently closed.", severe:true},
-    {code:"SEXHAR-ESCALATE", desc:"Possible minor involved or criminal content — mandatory escalation.", body:"This case has been escalated to our specialist safety team. Your account is suspended while the investigation is ongoing.", severe:true},
+    {code:"SEXUAL-HARASSMENT-WARN", desc:"Inappropriate sexual remark, first offense — formal warning.", body:"A message you sent was reported as sexually inappropriate. This isn't allowed on the platform. This is a formal warning on your account."},
+    {code:"SEXUAL-HARASSMENT-SUSPEND", desc:"Unwanted sexual advances or images — suspended.", body:"We found that you sent unwanted sexual messages or content to another member. Your account has been suspended while we review this further."},
+    {code:"SEXUAL-HARASSMENT-BAN", desc:"Explicit content sent, or repeat offender — permanently closed.", body:"Following a review of sexually explicit or harassing messages sent to other members, your account has been permanently closed.", severe:true},
+    {code:"SEXUAL-HARASSMENT-ESCALATE", desc:"Possible minor involved or criminal content — mandatory escalation.", body:"This case has been escalated to our specialist safety team. Your account is suspended while the investigation is ongoing.", severe:true},
     {code:"SEXHAR-DISMISS", desc:"Reviewed — no sexual or harassing content found.", body:DISMISS}
   ],
   "Death threat":[
-    {code:"THREAT-SUSPEND", desc:"Threat of violence — immediate suspension pending review.", body:"A message you sent contained a threat of violence. Your account has been suspended immediately while we review this case.", severe:true},
-    {code:"THREAT-BAN", desc:"Credible threat confirmed — permanently closed.", body:"Following a review of threatening messages sent to another member, your account has been permanently closed.", severe:true},
-    {code:"THREAT-ESCALATE-LE", desc:"Specific, credible threat — to safety lead for law-enforcement referral.", body:"This case has been escalated to our safety team for further action in line with our legal obligations. Your account is suspended.", severe:true},
-    {code:"THREAT-REPORTER-SUPPORT", desc:"Safety message to the reporter — pair with an action on the offender.", body:"Thank you for reporting this. We've taken action on the account involved. If you feel you are in immediate danger, please contact your local emergency services."},
+    {code:"DEATH-THREAT-SUSPEND", desc:"Threat of violence — immediate suspension pending review.", body:"A message you sent contained a threat of violence. Your account has been suspended immediately while we review this case.", severe:true},
+    {code:"DEATH-THREAT-BAN", desc:"Credible threat confirmed — permanently closed.", body:"Following a review of threatening messages sent to another member, your account has been permanently closed.", severe:true},
+    {code:"DEATH-THREAT-ESCALATE", desc:"Specific, credible threat — to safety lead for law-enforcement referral.", body:"This case has been escalated to our safety team for further action in line with our legal obligations. Your account is suspended.", severe:true},
+    {code:"DEATH-THREAT-REPORTER-SUPPORT", desc:"Safety message to the reporter — pair with an action on the offender.", body:"Thank you for reporting this. We've taken action on the account involved. If you feel you are in immediate danger, please contact your local emergency services."},
     {code:"THREAT-DISMISS", desc:"Reviewed — figure of speech, no genuine threat.", body:DISMISS}
   ],
   "Weapons":[
-    {code:"WEAPON-LISTING-REMOVE", desc:"Prohibited weapon listed for sale — listing removed.", body:"This listing was removed because weapons can't be sold on the platform. Please review our list of prohibited items."},
-    {code:"WEAPON-IMAGE-WARN", desc:"Weapon shown in chat, no threat and nothing offered for sale — removed + warning.", body:"An image you sent was removed because it showed a weapon. This is a warning on your account."},
-    {code:"WEAPON-THREAT-SUSPEND", desc:"Weapon image used to intimidate — suspended.", body:"An image you sent showed a weapon in a threatening context. Your account has been suspended while we review this case.", severe:true},
-    {code:"WEAPON-ESCALATE", desc:"Weapon plus explicit threat, or offering to sell a prohibited weapon — route to safety lead.", body:"This case has been escalated to our safety team. Your account is suspended while the investigation is ongoing.", severe:true},
+    {code:"WEAPONS-LISTING-REMOVE", desc:"Prohibited weapon listed for sale — listing removed.", body:"This listing was removed because weapons can't be sold on the platform. Please review our list of prohibited items."},
+    {code:"WEAPONS-IMAGE-WARN", desc:"Weapon shown in chat, no threat and nothing offered for sale — removed + warning.", body:"An image you sent was removed because it showed a weapon. This is a warning on your account."},
+    {code:"WEAPONS-SUSPEND", desc:"Weapon image used to intimidate — suspended.", body:"An image you sent showed a weapon in a threatening context. Your account has been suspended while we review this case.", severe:true},
+    {code:"WEAPONS-ESCALATE", desc:"Weapon plus explicit threat, or offering to sell a prohibited weapon — route to safety lead.", body:"This case has been escalated to our safety team. Your account is suspended while the investigation is ongoing.", severe:true},
     {code:"WEAPON-DISMISS", desc:"Reviewed — permitted item (e.g. kitchenware), no threat.", body:DISMISS}
   ],
   "Perversity":[
-    {code:"PERV-IMAGE-REMOVE", desc:"Indecent or disturbing image — removed + warning.", body:"An image you sent was removed because it breaks our rules on indecent or disturbing content. This is a warning on your account."},
-    {code:"PERV-COVERT-SUSPEND", desc:"Covert photo of a member / stalking behaviour — suspended.", body:"We found that you shared a photo of another person taken without their knowledge. Your account has been suspended while we review this case.", severe:true},
-    {code:"PERV-BAN", desc:"Severe or repeated indecent content — permanently closed.", body:"Following a review of indecent content shared with other members, your account has been permanently closed.", severe:true},
-    {code:"PERV-ESCALATE", desc:"Possibly illegal imagery — do not download, mandatory escalation.", body:"This case has been escalated to our specialist safety team. Your account is suspended while the investigation is ongoing.", severe:true},
+    {code:"PERVERSITY-IMAGE-REMOVE", desc:"Indecent or disturbing image — removed + warning.", body:"An image you sent was removed because it breaks our rules on indecent or disturbing content. This is a warning on your account."},
+    {code:"PERVERSITY-SUSPEND", desc:"Covert photo of a member / stalking behaviour — suspended.", body:"We found that you shared a photo of another person taken without their knowledge. Your account has been suspended while we review this case.", severe:true},
+    {code:"PERVERSITY-BAN", desc:"Severe or repeated indecent content — permanently closed.", body:"Following a review of indecent content shared with other members, your account has been permanently closed.", severe:true},
+    {code:"PERVERSITY-ESCALATE", desc:"Possibly illegal imagery — do not download, mandatory escalation.", body:"This case has been escalated to our specialist safety team. Your account is suspended while the investigation is ongoing.", severe:true},
     {code:"PERV-DISMISS", desc:"Reviewed — image is benign, AI false positive.", body:DISMISS}
   ],
   "Scam":[
@@ -1391,8 +1391,8 @@ const NOTICE_CATEGORIES = {
     {code:"REPLICA-DISMISS", desc:"Reviewed — item appears authentic.", body:DISMISS}
   ],
   "Feedback":[
-    {code:"FEEDBACK-EXTORTION-WARN", desc:"User pressured over a rating — formal warning.", body:"We reviewed a report about a message pressuring another member over their feedback. This isn't allowed on the platform. This is a warning on your account."},
-    {code:"FEEDBACK-EXTORTION-SUSPEND", desc:"Pattern of feedback pressure — suspended.", body:"We found a pattern of pressuring members over feedback. Your account has been suspended while we review this further.", severe:true},
+    {code:"FEEDBACK-WARN", desc:"User pressured over a rating — formal warning.", body:"We reviewed a report about a message pressuring another member over their feedback. This isn't allowed on the platform. This is a warning on your account."},
+    {code:"FEEDBACK-SUSPEND", desc:"Pattern of feedback pressure — suspended.", body:"We found a pattern of pressuring members over feedback. Your account has been suspended while we review this further.", severe:true},
     {code:"FEEDBACK-FAKE-REMOVE", desc:"Fabricated feedback — rating removed.", body:"We found this feedback didn't relate to a genuine transaction. It has been removed from the account it was left on."},
     {code:"FEEDBACK-RETALIATION-REMOVE", desc:"Retaliatory feedback after a resolved dispute — removed.", body:"This feedback was left in retaliation after a dispute was resolved. It has been removed and won't affect either account's rating."},
     {code:"FEEDBACK-DISMISS", desc:"Reviewed — feedback reflects a genuine transaction.", body:DISMISS}
@@ -1767,12 +1767,13 @@ function catalogText(){
     `${cat}:\n` + NOTICE_CATEGORIES[cat].map(n => `  ${n.code} — ${n.desc}`).join('\n')
   ).join('\n') + `\nAny category:\n  ${FALSE_NOTICE.code} — ${FALSE_NOTICE.desc}`;
 }
-const PROMPT_VERSION = 'v4';
+const PROMPT_VERSION = 'v5';
 const PROMPT_CHANGES = [
   { v:'v1', note:'First version.' },
   { v:'v2', note:'Separated fraud from conduct problems: deceiving someone with money at stake now warrants a suspension even on a first offence. Fixes RPT-48216 (fake tracking number) getting only a warning.' },
   { v:'v3', note:'Offering prohibited items for sale is now called out as serious even without a threat, and two weapon notice descriptions were reworded — Claude reads them literally, and "no threat" pulled it toward a warning. Also added: when a message breaks several rules at once, decide on the most serious one. Fixes RPT-48230 (switchblade offered for off-platform payment).' },
-  { v:'v4', note:'v3 fixed both targets but scored lower (90% vs 93%): the fraud rule was too broad and suspended a fake-review offer (RPT-48232), an honest reviewer got warned (RPT-48241), and a phishing link got a scam notice (RPT-48213). Narrowed the fraud rule to actual sales, said outright that honest reviews are never a violation, and told Claude the notice wording must match the facts because the member reads it.' }
+  { v:'v4', note:'v3 fixed both targets but scored lower (90% vs 93%): the fraud rule was too broad and suspended a fake-review offer (RPT-48232), an honest reviewer got warned (RPT-48241), and a phishing link got a scam notice (RPT-48213). Narrowed the fraud rule to actual sales, said outright that honest reviews are never a violation, and told Claude the notice wording must match the facts because the member reads it.' },
+  { v:'v5', note:'Renamed every notice to plain words (e.g. PM-PHISHING-BAN is now PHISHING-BAN, SEXHAR-SUSPEND is now SEXUAL-HARASSMENT-SUSPEND). No rule changed. The recorded run below is v4, so re-run once to confirm the new names score the same.' }
 ];
 function casePrompt(c){
   const thread = c.thread.map(m => {
@@ -1828,11 +1829,11 @@ function ruleRec(c){
 // Claude's actual answers from the prompt v4 evaluation run (quick model, all 30 cases).
 // Used wherever Claude can't run live — e.g. the GitHub Pages copy — and always labelled as recorded.
 const RECORDED_V4 = {
-  'RPT-48213':'PM-PHISHING-SUSPEND','RPT-48214':'INSULT-WARN','RPT-48215':'REPLICA-WARN','RPT-48216':'SCAM-SUSPEND','RPT-48217':'HARASSMENT-ESCALATE',
-  'RPT-48218':'SEXHAR-SUSPEND','RPT-48219':'WEAPON-THREAT-SUSPEND','RPT-48220':'PERV-COVERT-SUSPEND','RPT-48221':'THREAT-ESCALATE-LE','RPT-48222':'FEEDBACK-EXTORTION-WARN',
-  'RPT-48223':'PM-PHISHING-SUSPEND','RPT-48224':'REPLICA-WARN','RPT-48225':'INSULT-WARN','RPT-48226':'SCAM-SUSPEND','RPT-48227':'HARASSMENT-SUSPEND',
-  'RPT-48228':'SEXHAR-WARN','RPT-48229':'THREAT-SUSPEND','RPT-48230':'WEAPON-ESCALATE','RPT-48231':'THREAT-ESCALATE-LE','RPT-48232':'FEEDBACK-EXTORTION-WARN',
-  'RPT-48233':'FALSE-REPORT','RPT-48234':'PM-PHISHING-SUSPEND','RPT-48235':'FALSE-REPORT','RPT-48236':'FALSE-REPORT','RPT-48237':'FALSE-REPORT',
+  'RPT-48213':'PHISHING-SUSPEND','RPT-48214':'INSULT-WARN','RPT-48215':'REPLICA-WARN','RPT-48216':'SCAM-SUSPEND','RPT-48217':'HARASSMENT-ESCALATE',
+  'RPT-48218':'SEXUAL-HARASSMENT-SUSPEND','RPT-48219':'WEAPONS-SUSPEND','RPT-48220':'PERVERSITY-SUSPEND','RPT-48221':'DEATH-THREAT-ESCALATE','RPT-48222':'FEEDBACK-WARN',
+  'RPT-48223':'PHISHING-SUSPEND','RPT-48224':'REPLICA-WARN','RPT-48225':'INSULT-WARN','RPT-48226':'SCAM-SUSPEND','RPT-48227':'HARASSMENT-SUSPEND',
+  'RPT-48228':'SEXUAL-HARASSMENT-WARN','RPT-48229':'DEATH-THREAT-SUSPEND','RPT-48230':'WEAPONS-ESCALATE','RPT-48231':'DEATH-THREAT-ESCALATE','RPT-48232':'FEEDBACK-WARN',
+  'RPT-48233':'FALSE-REPORT','RPT-48234':'PHISHING-SUSPEND','RPT-48235':'FALSE-REPORT','RPT-48236':'FALSE-REPORT','RPT-48237':'FALSE-REPORT',
   'RPT-48238':'FALSE-REPORT','RPT-48239':'FALSE-REPORT','RPT-48240':'FALSE-REPORT','RPT-48241':'FALSE-REPORT','RPT-48242':'SCAM-SUSPEND'
 };
 function fallbackRec(c){
@@ -2215,28 +2216,28 @@ function renderAuto(){
 // The answer a senior T&S agent would give for each sample case. "ok" = also defensible.
 // truth: 'action' (account action warranted) · 'light' (warning/removal) · 'false' (no violation)
 const EXPECTED = {
-  'RPT-48213': { best:'PM-PHISHING-SUSPEND', ok:['PM-PHISHING-BAN','PM-PHISHING-ESCALATE'], truth:'action', why:'2-day-old account pushing an off-platform payment link, IP shared with suspended accounts.' },
+  'RPT-48213': { best:'PHISHING-SUSPEND', ok:['PHISHING-BAN','PHISHING-ESCALATE'], truth:'action', why:'2-day-old account pushing an off-platform payment link, IP shared with suspended accounts.' },
   'RPT-48214': { best:'INSULT-WARN', ok:['FALSE-REPORT'], truth:'light', why:'Dismissive and rude, but mild — first report on a long, well-rated account.' },
   'RPT-48215': { best:'REPLICA-SUSPEND', ok:['REPLICA-WARN','REPLICA-ESCALATE'], truth:'action', why:'Admits items are copies; 40+ similar listings and a shared IP with flagged sellers point to a pattern.' },
   'RPT-48216': { best:'SCAM-SUSPEND', ok:['SCAM-ESCALATE'], truth:'action', why:'Fake tracking number from a week-old account behind a VPN; funds should be held.' },
-  'RPT-48217': { best:'HARASSMENT-SUSPEND', ok:['HARASSMENT-ESCALATE','THREAT-SUSPEND'], truth:'action', why:'"I\u2019ll find you" is intimidating even without explicit violence.' },
-  'RPT-48218': { best:'SEXHAR-BAN', ok:['SEXHAR-SUSPEND','SEXHAR-ESCALATE'], truth:'action', why:'Unsolicited explicit image plus a pattern of targeting sellers of women\u2019s clothing.' },
-  'RPT-48219': { best:'WEAPON-THREAT-SUSPEND', ok:['WEAPON-ESCALATE','THREAT-SUSPEND','THREAT-ESCALATE-LE'], truth:'action', why:'Knife image sent to pressure a feedback change is a threat.' },
-  'RPT-48220': { best:'PERV-COVERT-SUSPEND', ok:['PERV-ESCALATE','PERV-BAN','HARASSMENT-SUSPEND'], truth:'action', why:'Covert photo of the seller after being told no — stalking behaviour.' },
-  'RPT-48221': { best:'THREAT-ESCALATE-LE', ok:['THREAT-SUSPEND','THREAT-BAN'], truth:'action', why:'Explicit death threat plus knowledge of the home address — credible, needs escalation.' },
-  'RPT-48222': { best:'FEEDBACK-EXTORTION-WARN', ok:['FEEDBACK-EXTORTION-SUSPEND'], truth:'light', why:'Pressure over a rating; two prior disputes could justify suspension.' },
-  'RPT-48223': { best:'PM-PHISHING-SUSPEND', ok:['PM-PHISHING-BAN','PM-PHISHING-ESCALATE'], truth:'action', why:'Card-details form from a 1-day-old account on an IP linked to phishing suspensions.' },
+  'RPT-48217': { best:'HARASSMENT-SUSPEND', ok:['HARASSMENT-ESCALATE','DEATH-THREAT-SUSPEND'], truth:'action', why:'"I\u2019ll find you" is intimidating even without explicit violence.' },
+  'RPT-48218': { best:'SEXUAL-HARASSMENT-BAN', ok:['SEXUAL-HARASSMENT-SUSPEND','SEXUAL-HARASSMENT-ESCALATE'], truth:'action', why:'Unsolicited explicit image plus a pattern of targeting sellers of women\u2019s clothing.' },
+  'RPT-48219': { best:'WEAPONS-SUSPEND', ok:['WEAPONS-ESCALATE','DEATH-THREAT-SUSPEND','DEATH-THREAT-ESCALATE'], truth:'action', why:'Knife image sent to pressure a feedback change is a threat.' },
+  'RPT-48220': { best:'PERVERSITY-SUSPEND', ok:['PERVERSITY-ESCALATE','PERVERSITY-BAN','HARASSMENT-SUSPEND'], truth:'action', why:'Covert photo of the seller after being told no — stalking behaviour.' },
+  'RPT-48221': { best:'DEATH-THREAT-ESCALATE', ok:['DEATH-THREAT-SUSPEND','DEATH-THREAT-BAN'], truth:'action', why:'Explicit death threat plus knowledge of the home address — credible, needs escalation.' },
+  'RPT-48222': { best:'FEEDBACK-WARN', ok:['FEEDBACK-SUSPEND'], truth:'light', why:'Pressure over a rating; two prior disputes could justify suspension.' },
+  'RPT-48223': { best:'PHISHING-SUSPEND', ok:['PHISHING-BAN','PHISHING-ESCALATE'], truth:'action', why:'Card-details form from a 1-day-old account on an IP linked to phishing suspensions.' },
   'RPT-48224': { best:'REPLICA-SUSPEND', ok:['REPLICA-ESCALATE','REPLICA-WARN'], truth:'action', why:'Openly sells "1:1 mirror copies" across 60+ listings.' },
   'RPT-48225': { best:'INSULT-WARN', ok:['FALSE-REPORT'], truth:'light', why:'Snarky rather than abusive — a warning at most.' },
   'RPT-48226': { best:'SCAM-SUSPEND', ok:['SCAM-ESCALATE','SCAM-BAN'], truth:'action', why:'Empty-box shipping with three similar buyer reports this month.' },
   'RPT-48227': { best:'HARASSMENT-SUSPEND', ok:['HARASSMENT-WARN'], truth:'action', why:'Message flooding after a clear "no", with two prior reports for the same thing.' },
-  'RPT-48228': { best:'SEXHAR-SUSPEND', ok:['SEXHAR-BAN','SEXHAR-WARN'], truth:'action', why:'Sexual comments continued after being told they were inappropriate.' },
-  'RPT-48229': { best:'THREAT-SUSPEND', ok:['THREAT-BAN','THREAT-ESCALATE-LE'], truth:'action', why:'Violent threat from an account already warned for harassment.' },
-  'RPT-48230': { best:'WEAPON-ESCALATE', ok:['WEAPON-THREAT-SUSPEND','PM-PHISHING-SUSPEND'], truth:'action', why:'Selling a prohibited weapon and asking for payment outside the app.' },
-  'RPT-48231': { best:'PERV-ESCALATE', ok:['PERV-BAN','THREAT-SUSPEND','THREAT-ESCALATE-LE','HARASSMENT-SUSPEND'], truth:'action', why:'Graphic image sent as intimidation — both disturbing content and a threat.' },
-  'RPT-48232': { best:'FEEDBACK-FAKE-REMOVE', ok:['FEEDBACK-EXTORTION-WARN','FEEDBACK-EXTORTION-SUSPEND'], truth:'light', why:'Proposes fake feedback; 18 entries left minutes apart suggest earlier swaps.' },
+  'RPT-48228': { best:'SEXUAL-HARASSMENT-SUSPEND', ok:['SEXUAL-HARASSMENT-BAN','SEXUAL-HARASSMENT-WARN'], truth:'action', why:'Sexual comments continued after being told they were inappropriate.' },
+  'RPT-48229': { best:'DEATH-THREAT-SUSPEND', ok:['DEATH-THREAT-BAN','DEATH-THREAT-ESCALATE'], truth:'action', why:'Violent threat from an account already warned for harassment.' },
+  'RPT-48230': { best:'WEAPONS-ESCALATE', ok:['WEAPONS-SUSPEND','PHISHING-SUSPEND'], truth:'action', why:'Selling a prohibited weapon and asking for payment outside the app.' },
+  'RPT-48231': { best:'PERVERSITY-ESCALATE', ok:['PERVERSITY-BAN','DEATH-THREAT-SUSPEND','DEATH-THREAT-ESCALATE','HARASSMENT-SUSPEND'], truth:'action', why:'Graphic image sent as intimidation — both disturbing content and a threat.' },
+  'RPT-48232': { best:'FEEDBACK-FAKE-REMOVE', ok:['FEEDBACK-WARN','FEEDBACK-SUSPEND'], truth:'light', why:'Proposes fake feedback; 18 entries left minutes apart suggest earlier swaps.' },
   'RPT-48233': { best:'FALSE-REPORT', ok:[], truth:'false', why:'Shared the official help-centre link — no rule broken.' },
-  'RPT-48234': { best:'PM-PHISHING-SUSPEND', ok:['PM-PHISHING-BAN','PM-PHISHING-ESCALATE','PM-PHISHING-WARN'], truth:'action', why:'Moves the buyer to WhatsApp for a payment link from a day-old datacenter-IP account.' },
+  'RPT-48234': { best:'PHISHING-SUSPEND', ok:['PHISHING-BAN','PHISHING-ESCALATE','PHISHING-WARN'], truth:'action', why:'Moves the buyer to WhatsApp for a payment link from a day-old datacenter-IP account.' },
   'RPT-48235': { best:'FALSE-REPORT', ok:[], truth:'false', why:'Delivered and signed for; the seller was polite and helpful.' },
   'RPT-48236': { best:'FALSE-REPORT', ok:[], truth:'false', why:'Politely declining a lowball offer is not an insult.' },
   'RPT-48237': { best:'FALSE-REPORT', ok:[], truth:'false', why:'Two polite reminders about a delivered order is normal selling.' },
@@ -2255,10 +2256,12 @@ function seedHistoryFromStored(){
 }
 const evalRuns = { claude: null, rules: null };
 let evalCtl = null;
+const CODE_RENAMES = {"PM-PHISHING-WARN": "PHISHING-WARN", "PM-PHISHING-SUSPEND": "PHISHING-SUSPEND", "PM-PHISHING-BAN": "PHISHING-BAN", "PM-PHISHING-ESCALATE": "PHISHING-ESCALATE", "SEXHAR-WARN": "SEXUAL-HARASSMENT-WARN", "SEXHAR-SUSPEND": "SEXUAL-HARASSMENT-SUSPEND", "SEXHAR-BAN": "SEXUAL-HARASSMENT-BAN", "SEXHAR-ESCALATE": "SEXUAL-HARASSMENT-ESCALATE", "THREAT-SUSPEND": "DEATH-THREAT-SUSPEND", "THREAT-BAN": "DEATH-THREAT-BAN", "THREAT-ESCALATE-LE": "DEATH-THREAT-ESCALATE", "THREAT-REPORTER-SUPPORT": "DEATH-THREAT-REPORTER-SUPPORT", "WEAPON-LISTING-REMOVE": "WEAPONS-LISTING-REMOVE", "WEAPON-IMAGE-WARN": "WEAPONS-IMAGE-WARN", "WEAPON-THREAT-SUSPEND": "WEAPONS-SUSPEND", "WEAPON-ESCALATE": "WEAPONS-ESCALATE", "PERV-IMAGE-REMOVE": "PERVERSITY-IMAGE-REMOVE", "PERV-COVERT-SUSPEND": "PERVERSITY-SUSPEND", "PERV-BAN": "PERVERSITY-BAN", "PERV-ESCALATE": "PERVERSITY-ESCALATE", "FEEDBACK-EXTORTION-WARN": "FEEDBACK-WARN", "FEEDBACK-EXTORTION-SUSPEND": "FEEDBACK-SUSPEND"};
 let evalHistory = [];
 try {
   const s = JSON.parse(localStorage.getItem('tc-eval') || 'null');
   if(s && s.claude) evalRuns.claude = s.claude;
+  if(evalRuns.claude && evalRuns.claude.results) Object.values(evalRuns.claude.results).forEach(r => { if(r && r.code && CODE_RENAMES[r.code]) r.code = CODE_RENAMES[r.code]; });
   if(s && Array.isArray(s.history)) evalHistory = s.history;
   if(s && Array.isArray(s.history)) evalHistory = s.history;
 } catch(e) {}
